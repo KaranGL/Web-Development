@@ -12,4 +12,7 @@ Lab3 - Task1 -> A HTML page with internal CSS styling. This page is built up usi
 
 <img src="images/CaptureLab3Task2.JPG" Height=400>
 
-Lab 4 - 
+Lab 4 - Built using HTML (Basic HTML + forms).
+
+<img src="images/CaptureLab4.JPG" Height=400>
+
