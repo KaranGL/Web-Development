@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <title>Week 6 Lab - JavaScript DOM and Arrays</title>
+        <link rel = "stylesheet" type = "text/css" href = "style.css"/>
+		<meta charset="utf-8">
+		
+		<script>
+			
+			function validateform(){
+				var x = document.getElementsByTagName('input');
+					
+					if(x[0].value == ""){
+					alert("Enter the First Name");
+					return false;
+					}
+                    if(x[1].value == ""){
+					alert("Enter the Last Name");
+					return false;
+					}
+                    if(x[2].value == ""){
+					alert("Enter the Address");
+					return false;
+					}
+                    if(x[3].value == ""){
+					alert("Enter the city");
+					return false;
+					}
+                    if(x[4].value == ""){
+					alert("Enter the postcode");
+					return false;
+					}
+                    if(x[5].value == "" || x[5].value < "0"){
+					alert("Enter the widget 1 quantity which should be more than zero or equal to zero");
+                    return false;
+					}
+                    if(x[6].value < "0"){
+                    alert('The Value you entered in widget 2 is less than zero. Please provide a value greater than zero.');
+                    return false;
+                    }
+                    if(x[7].value == "" || x[7].value < "0"){
+					alert("Enter the widget 3 quantity which should be more than zero or equal to zero");
+                    return false;
+					}
+                    if(x[8].value < "0"){
+                    alert('The Value you entered in widget 4 is less than zero. Please provide a value greater than zero.');
+                    return false;
+                    }
+                    if(x[9].value == "" || x[9].value < "0"){
+					alert("Enter the widget 5 quantity which should be more than zero or equal to zero");
+                    return false;
+					}
+                    if(x[10].value < "0"){
+                    alert('The Value you entered in widget 6 is less than zero. Please provide a value greater than zero.');
+                    return false;
+                    }
+                    
+                    // if(x[11].value.ch){
+                    //     var total1 = x[5].value +x[6].value +x[7].value +x[8].value +x[9].value +x[10].value + 5; 
+                    //     document.alert(total1);
+                    // }
+                    // if(x[12] != ""){
+                    //     var total2 = x[5].value +x[6].value +x[7].value +x[8].value +x[9].value +x[10].value + 10; 
+                    //     document.alert(total2); 
+                    // }
+                    // if(x[13] != ""){
+                    //     var total3 = x[5].value +x[6].value +x[7].value +x[8].value +x[9].value +x[10].value + 15; 
+                    //     document.alert(total3);
+                    // }
+
+				}
+			
+		</script>
+    </head>
+    <body>
+        <img src = "valid-html401.png" alt = "validationicon">
+        <h2><u><b>Order Form</b></u></h2>
+		<form name="orderForm" method="post" action="processForm.html" onsubmit = "return validateform()">
+            <table>
+            <tr>
+                <th colspan="2">Personal Information</th>
+            </tr>
+            <tr>
+                <td>First Name:</td>
+                <td><input type="text" name="firstName" id="firstName" size="30"></td>
+            </tr>
+            <tr>
+                <td>Last Name:</td>
+                <td><input type="text" name="lastName" id="lastName" size="30"></td>
+            </tr>
+            <tr>
+                <td>Address:</td>
+                <td><input type="text" name="address" id="address" size="30"></td>
+            </tr>
+            <tr>
+                <td>City:</td>
+                <td><input type="text" name="city" id="city" size="30"></td>
+            </tr>
+            <tr>
+                <td>Province:</td>
+                <td><select name="province" id="province" size="1">
+                        <option value="SP">Select a province</option>
+                        <option value="BC">British Columbia</option>
+                        <option value="AB">Alberta</option>
+                        <option value="SK">Saskatchewan</option>
+                        <option value="MB">Manitoba</option>
+                        <option value="ON">Ontario</option>
+                        <option value="QC">Québec</option>
+                        <option value="NB">New Brunswick</option>
+                        <option value="NS">Nova Scotia</option>
+                        <option value="PE">Prince Edward Island</option>
+                        <option value="NF">Newfoundland</option>
+                        <option value="YK">Yukon</option>
+                        <option value="NWT">Northwest Territories</option>
+                        <option value="NU">Nunavut</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Postal Code:</td>
+                <td><input type="text" name="postalCode" id="postalCode" maxlength="6"></td>
+            </tr>
+            <tr>
+                <th colspan="2">Order Information</th>
+            </tr>
+            <tr>
+                <td rowspan="9">Select your products:<br>
+                    <span id="productError" class="errorMessage" hidden></span></td>
+                <td>Widget #1&nbsp;
+                    <input type="text" name="widget1qty" id="widget1qty" size="1" value="">Qty @ <strong>$5.00/ea</strong></td>
+            </tr>
+            <tr>
+                <td>Widget #2&nbsp;
+                    <input type="text" name="widget2qty" id="widget2qty" size="1" value="">Qty @ <strong>$15.00/ea</strong></td>
+            </tr>
+            <tr>
+                <td>Widget #3&nbsp;
+                    <input type="text" name="widget3qty" id="widget3qty" size="1" value="">Qty @ <strong>$25.00/ea</strong></td>
+            </tr>
+            <tr><td></td>
+			</tr>
+            <tr>
+                <td>Widget #4&nbsp;
+                    <input type="text" name="widget4qty" id="widget4qty" size="1" value="">Qty @ <strong>$25.00/ea</strong></td>
+            </tr>
+            <tr><td></td>
+			</tr>
+            <tr>
+                <td>Widget #5&nbsp;
+                    <input type="text" name="widget5qty" id="widget5qty" size="1" value="">Qty @ <strong>$25.00/ea</strong></td>
+            </tr>
+            <tr><td></td>
+			</tr>
+            <tr>
+                <td>Widget #6&nbsp;
+                    <input type="text" name="widget6qty" id="widget6qty" size="1" value="">Qty @ <strong>$25.00/ea</strong></td>
+            </tr>
+            <tr>
+                <td rowspan="3">Shipping Type:</td>
+                <td>Standard ($5.00)<input type="radio" name="shippingType" id="shippingTypeStandard" value="Standard" checked></td>
+
+            </tr>
+            <tr>
+                <td>Express ($10.00)<input type="radio" name="shippingType" id="shippingTypeExpress" value="Express"></td>
+            </tr>
+            <tr>
+                <td>Overnight ($20.00)<input type="radio" name="shippingType" id="shippingTypeOvernight" value="Overnight"></td>
+            </tr>
+            <tr>
+                <th colspan="2">Submit Order</th>
+            </tr>
+            <tr>
+                <td><input type="submit" name="btnSubmit" id="btnSubmit" value="Submit Order" onclick = "validateform()"></td>
+                <td><input type="reset" name="btnReset" id="btnReset" value="Reset Form"></td>
+            </tr>
+			
+            </table>
+        </form>
+    </body>
+</html>

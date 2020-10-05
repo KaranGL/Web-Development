@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <title>Lab5</title>
+	<meta charset="utf-8">
+
+	<script>
+	    
+		function listOddEvenNumbers(){
+			var num = prompt("Enter a number greater than 4:	");
+			document.write("<br>");
+			if(num<=4){
+				do{
+				num = prompt("You entered a number less than 4. Please enter a number greater than 4:");
+				}while(num<=4);
+			}
+				document.write("The number you entered is "+num);
+				document.write("<br><br>");
+				document.write("Even numbers are:");
+			for(var i=0;i<=num;i++){
+				if(i%2==0){
+				document.write(i);
+					if(i<(num-1)){
+						document.write(",");
+					}
+				}
+			}
+				document.write("<br><br>");
+				document.write("Odd numbers are:");
+			for(i=0;i<=num;i++){
+				if(i%2!=0){
+				document.write(i);
+					if(i<(num-1)){
+						document.write(",");
+					}
+				}
+			}
+		}
+		
+		</script>
+</head>
+
+<body>
+			<h3>Lab 5 - Intro to JavaScript</h3>
+			<div style="margin-top: 10px;" id="result">
+            
+				Enter a number:  <input type="text" id="num" name="num" value="0" />
+				<input type="button" value="List Odd and Even Numbers" onclick="listOddEvenNumbers();" name="find" />
+            </div>
+        
+</body>
+</html>
